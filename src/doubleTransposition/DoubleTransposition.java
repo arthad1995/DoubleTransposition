@@ -13,9 +13,11 @@ public class DoubleTransposition {
 				"cryptographic");
 		System.out.println("Second Cipher: \n");
 		String secondCipher = encrypt(firstCipher, "network security");
-		String firstdec = decrypt(secondCipher, "network security");
+		
+		String cipherToDecrypt = "gMBhU F=9c2 Xzzlz pswIb ZZc32 mbSIW ac=kv S0mXG 2WdFR FmE4h Nd9cE Sj5jh uisvb Z=ccl v1xoR RV0lH S0Yhy =0sZR YZoyF dAoxF 4W2=6 3o2gl YLdbT GUIcZ LUbL0 vXmD3 GHXB5 hllm3 IMbbc aM0tW W=HVH kFRxN Rgk=R 1BhYQ G23pt  vZks9 abaZy  3IbZL  Ibcg5  HDCS2  GmNJ5  B=T2U  bZbXZ  Ryvuz  WX1G3 wMIRQ";
+		String firstdec = decrypt(cipherToDecrypt, "NETWORKSCU");
 		System.out.println(firstdec);
-		String second = decrypt(firstdec, "cryptographic");
+		String second = decrypt(firstdec, "CRYPTOGAHI");
 		System.out.println(second);
 	}
 	
@@ -63,6 +65,7 @@ public class DoubleTransposition {
 	private static String decrypt(String cipher, String keyword){
 		HashSet<Character> dupSet = new HashSet<>();
 		ArrayList<Turple> header = new ArrayList<>();
+		keyword = keyword.toLowerCase();
 		int ii = 0;
 		for (int i = 0; i < keyword.length(); i++) {
 			if (dupSet.add(keyword.charAt(i))){
@@ -95,6 +98,9 @@ public class DoubleTransposition {
 			j++;
 			minIndex =smallestIndex(header, checked);
 		}
+		
+		printTurpleList(header);
+		printlistArray(listArray);
 		String result = "";
 		int max = listArray[0].size() + 1;
 		int jj = 0;
