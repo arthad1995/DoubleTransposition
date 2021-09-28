@@ -24,6 +24,8 @@ public class DoubleTransposition {
 
 
 	private static String encrypt(String message, String keyword) {
+		//comment
+		
 		message = message.replaceAll(" ", "").toLowerCase();
 		keyword = keyword.toLowerCase();
 		//check dup character
